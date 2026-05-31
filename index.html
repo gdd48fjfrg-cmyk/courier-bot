@@ -416,11 +416,12 @@
     <label for="name">Имя</label>
 
     <input
-      id="name"
-      type="text"
-      maxlength="10"
-      placeholder="Например: Иван"
-    >
+  id="name"
+  type="text"
+  maxlength="10"
+  placeholder="Например: Иван"
+  oninput="this.value=this.value.replace(/[^А-Яа-яЁёA-Za-z]/g,'')"
+/>
 
     <label for="phone">Телефон РФ</label>
 
