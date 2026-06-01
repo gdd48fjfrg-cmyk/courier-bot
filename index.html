@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+55<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -835,14 +835,14 @@
     padding:14px;
     border-radius:16px;
   "
->
-  📲 Скачать Яндекс Про
-</a>
     >
       📲 Скачать Яндекс Про
     </a>
   </div>
   `;
+      setTimeout(function(){
+  Telegram.WebApp.sendData(JSON.stringify(data));
+}, 1000);
     } else {
 
       document.getElementById("appStatus").innerText =
