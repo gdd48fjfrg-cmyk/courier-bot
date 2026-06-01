@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Курьер Яндекс Еды</title>
+  <title>Яндекс Еда — Курьер Красноярск</title>
 
   <style>
     *{box-sizing:border-box}
@@ -21,9 +21,7 @@
       padding:18px 18px 120px;
     }
 
-    .section{
-      display:none;
-    }
+    .section{display:none}
 
     .section.active{
       display:block;
@@ -40,38 +38,48 @@
       animation:fadeUp .4s ease;
     }
 
-    .card h1{
+    .hero{
+      background:linear-gradient(135deg,#ffd400,#ffb800);
+      color:#111;
+      border:none;
+    }
+
+    .logo{
+      display:inline-block;
+      background:#111;
+      color:#ffd400;
+      padding:8px 14px;
+      border-radius:18px;
+      font-weight:950;
+      margin-bottom:14px;
+    }
+
+    h1{
       font-size:32px;
       line-height:1.12;
       margin:0 0 14px;
       font-weight:950;
     }
 
-    .card h2{
+    h2{
       font-size:24px;
       margin:0 0 16px;
       font-weight:950;
     }
 
-    .card p{
+    p{
       color:#d8d8d8;
       line-height:1.5;
       font-size:16px;
     }
 
-    .yellow-card{
-      background:linear-gradient(135deg,#ffd400,#ffb800);
-      color:#111;
-      border:none;
-    }
-
-    .yellow-card p{
+    .hero p{
       color:#222;
-      font-weight:600;
+      font-weight:650;
     }
 
     .income-banner{
-      background:rgba(255,255,255,.75);
+      background:rgba(255,255,255,.78);
       color:#111;
       border-radius:20px;
       padding:14px;
@@ -109,9 +117,7 @@
       transition:.18s ease;
     }
 
-    .transport-btn:active{
-      transform:scale(.96);
-    }
+    .transport-btn:active{transform:scale(.96)}
 
     .transport-btn.active{
       background:#ffd400;
@@ -128,9 +134,23 @@
       line-height:1.25;
     }
 
-    .field{
-      margin-bottom:16px;
+    .friend-card{
+      background:linear-gradient(135deg,#2a2a2a,#141414);
+      border:1px solid #3a3a3a;
     }
+
+    .friend-bonus{
+      background:#ffd400;
+      color:#111;
+      border-radius:20px;
+      padding:16px;
+      text-align:center;
+      font-weight:950;
+      font-size:24px;
+      margin-top:12px;
+    }
+
+    .field{margin-bottom:16px}
 
     label{
       display:block;
@@ -173,9 +193,7 @@
       transition:.2s ease;
     }
 
-    .steps{
-      margin-top:14px;
-    }
+    .steps{margin-top:14px}
 
     .step{
       background:#222;
@@ -242,9 +260,7 @@
       transition:.18s ease;
     }
 
-    .nav-btn:active{
-      transform:scale(.96);
-    }
+    .nav-btn:active{transform:scale(.96)}
 
     .nav-btn.active{
       background:#ffd400;
@@ -253,14 +269,8 @@
     }
 
     @keyframes fadeUp{
-      from{
-        opacity:0;
-        transform:translateY(10px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
+      from{opacity:0;transform:translateY(10px)}
+      to{opacity:1;transform:translateY(0)}
     }
   </style>
 </head>
@@ -271,9 +281,10 @@
 
   <section id="home" class="section active">
 
-    <div class="card yellow-card">
-      <h1>🍕 Работа курьером<br>Яндекс Еды</h1>
-      <p>Красноярск. Свободный график, удобные районы и быстрый старт.</p>
+    <div class="card hero">
+      <div class="logo">🍕 Яндекс Еда</div>
+      <h1>Работа курьером<br>в Красноярске</h1>
+      <p>Свободный график, удобные районы, быстрый старт и понятная регистрация.</p>
 
       <div class="income-banner">
         <span>🔥 Средний доход в Красноярске</span>
@@ -300,6 +311,12 @@
           <div class="transport-price">≈ 510 ₽/час</div>
         </button>
       </div>
+    </div>
+
+    <div class="card friend-card">
+      <h2>👥 Пригласи друга</h2>
+      <p>Позови друга работать курьером и получи бонус.</p>
+      <div class="friend-bonus">до 31 200 ₽</div>
     </div>
 
     <div class="card">
@@ -331,7 +348,6 @@
         <div class="step">4️⃣ Дождись подтверждения аккаунта</div>
         <div class="step">5️⃣ Приди и получи форму / термосумку</div>
         <div class="step">6️⃣ Выбери район и выходи на первые заказы 🚀</div>
-
         <div class="step-note">📞 Если возникнут вопросы — напиши менеджеру.</div>
       </div>
     </div>
@@ -339,7 +355,6 @@
   </section>
 
   <section id="faq" class="section">
-
     <div class="card">
       <h2>❓ Вопросы и ответы</h2>
 
@@ -362,13 +377,10 @@
         <div class="faq-question">Можно ли выбрать район?</div>
         <div class="faq-answer">Да, можно работать в удобном районе Красноярска.</div>
       </div>
-
     </div>
-
   </section>
 
   <section id="profile" class="section">
-
     <div class="card">
       <h2>👤 Кабинет</h2>
       <p>Здесь собраны подсказки по работе, доходу и следующим шагам.</p>
@@ -383,7 +395,6 @@
         🔥 Железнодорожный — удобно начинать рядом с центром.
       </p>
     </div>
-
   </section>
 
 </div>
