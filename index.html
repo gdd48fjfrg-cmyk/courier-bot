@@ -803,9 +803,46 @@
 
       Telegram.WebApp.sendData(JSON.stringify(data));
 
-      document.getElementById("appStatus").innerText =
-        "✅ Заявка отправлена";
+      document.getElementById("appStatus").innerHTML =
+  `
+  <div style="
+    background:#ffd400;
+    color:#111;
+    border-radius:22px;
+    padding:18px;
+    margin-top:16px;
+    text-align:center;
+    font-weight:900;
+  ">
+    <div style="font-size:24px;margin-bottom:8px;">
+      ✅ Заявка отправлена
+    </div>
 
+    <div style="font-size:15px;line-height:1.5;">
+      Менеджер скоро свяжется с тобой.<br>
+      Пока можешь установить Яндекс Про.
+    </div>
+
+    <a
+  href="https://pro.yandex/lp/ru-ru/app/"
+  target="_blank"
+  style="
+    display:block;
+    margin-top:14px;
+    background:#111;
+    color:#ffd400;
+    text-decoration:none;
+    padding:14px;
+    border-radius:16px;
+  "
+>
+  📲 Скачать Яндекс Про
+</a>
+    >
+      📲 Скачать Яндекс Про
+    </a>
+  </div>
+  `;
     } else {
 
       document.getElementById("appStatus").innerText =
