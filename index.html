@@ -21,7 +21,9 @@
       padding:18px 18px 120px;
     }
 
-    .section{display:none}
+    .section{
+      display:none;
+    }
 
     .section.active{
       display:block;
@@ -52,6 +54,11 @@
       border-radius:18px;
       font-weight:950;
       margin-bottom:14px;
+      font-size:18px;
+    }
+
+    .ya-red{
+      color:#ff3b30;
     }
 
     h1{
@@ -117,7 +124,9 @@
       transition:.18s ease;
     }
 
-    .transport-btn:active{transform:scale(.96)}
+    .transport-btn:active{
+      transform:scale(.96);
+    }
 
     .transport-btn.active{
       background:#ffd400;
@@ -150,7 +159,27 @@
       margin-top:12px;
     }
 
-    .field{margin-bottom:16px}
+    .register-btn{
+      display:block;
+      margin-top:18px;
+      background:#ffd400;
+      color:#111;
+      text-align:center;
+      padding:16px;
+      border-radius:18px;
+      text-decoration:none;
+      font-weight:950;
+      font-size:17px;
+      transition:.18s ease;
+    }
+
+    .register-btn:active{
+      transform:scale(.98);
+    }
+
+    .field{
+      margin-bottom:16px;
+    }
 
     label{
       display:block;
@@ -193,7 +222,9 @@
       transition:.2s ease;
     }
 
-    .steps{margin-top:14px}
+    .steps{
+      margin-top:14px;
+    }
 
     .step{
       background:#222;
@@ -260,7 +291,9 @@
       transition:.18s ease;
     }
 
-    .nav-btn:active{transform:scale(.96)}
+    .nav-btn:active{
+      transform:scale(.96);
+    }
 
     .nav-btn.active{
       background:#ffd400;
@@ -269,8 +302,15 @@
     }
 
     @keyframes fadeUp{
-      from{opacity:0;transform:translateY(10px)}
-      to{opacity:1;transform:translateY(0)}
+      from{
+        opacity:0;
+        transform:translateY(10px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
     }
   </style>
 </head>
@@ -282,9 +322,16 @@
   <section id="home" class="section active">
 
     <div class="card hero">
-      <div class="logo">🍕 Яндекс Еда</div>
+      <div class="logo">
+        🍕 <span class="ya-red">Я</span>ндекс Еда
+      </div>
+
       <h1>Работа курьером<br>в Красноярске</h1>
-      <p>Свободный график, удобные районы, быстрый старт и понятная регистрация.</p>
+
+      <p>
+        Свободный график, удобные районы,
+        быстрый старт и понятная регистрация.
+      </p>
 
       <div class="income-banner">
         <span>🔥 Средний доход в Красноярске</span>
@@ -296,6 +343,7 @@
       <h2>🚴 Тип доставки</h2>
 
       <div class="transport-grid">
+
         <button id="transport-foot" class="transport-btn active" onclick="setTransport('foot')">
           🚶<br>Пеший
           <div class="transport-price">≈ 400 ₽/час</div>
@@ -310,13 +358,37 @@
           🚗<br>Авто
           <div class="transport-price">≈ 510 ₽/час</div>
         </button>
+
       </div>
     </div>
 
     <div class="card friend-card">
       <h2>👥 Пригласи друга</h2>
-      <p>Позови друга работать курьером и получи бонус.</p>
-      <div class="friend-bonus">до 31 200 ₽</div>
+
+      <p>
+        Позови друга работать курьером
+        и получи бонус.
+      </p>
+
+      <div class="friend-bonus">
+        до 31 200 ₽
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🚀 Начать регистрацию</h2>
+
+      <p>
+        Нажми кнопку ниже и перейди
+        к регистрации курьера Яндекс Еды.
+      </p>
+
+      <a
+        href="https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&user_invite_code=67dd9abed6de4f799486a0435d56f4c7&utm_content=blank"
+        class="register-btn"
+      >
+        Перейти к регистрации
+      </a>
     </div>
 
     <div class="card">
@@ -324,17 +396,36 @@
 
       <div class="field">
         <label>Часов в день</label>
-        <input id="hours" type="number" value="8" min="1" max="16" oninput="calculateIncome()">
+
+        <input
+          id="hours"
+          type="number"
+          value="8"
+          min="1"
+          max="16"
+          oninput="calculateIncome()"
+        >
       </div>
 
       <div class="field">
         <label>Дней в месяц</label>
-        <input id="days" type="number" value="22" min="1" max="31" oninput="calculateIncome()">
+
+        <input
+          id="days"
+          type="number"
+          value="22"
+          min="1"
+          max="31"
+          oninput="calculateIncome()"
+        >
       </div>
 
       <div class="result">
         <small>Примерный доход</small>
-        <div id="income-result" class="result-value">70 400 ₽</div>
+
+        <div id="income-result" class="result-value">
+          70 400 ₽
+        </div>
       </div>
     </div>
 
@@ -342,73 +433,156 @@
       <h2>📋 Что делать дальше</h2>
 
       <div class="steps">
-        <div class="step">1️⃣ Оставь заявку в боте</div>
-        <div class="step">2️⃣ Пройди регистрацию в Яндекс Еде</div>
-        <div class="step">3️⃣ Установи приложение Яндекс Про</div>
-        <div class="step">4️⃣ Дождись подтверждения аккаунта</div>
-        <div class="step">5️⃣ Приди и получи форму / термосумку</div>
-        <div class="step">6️⃣ Выбери район и выходи на первые заказы 🚀</div>
-        <div class="step-note">📞 Если возникнут вопросы — напиши менеджеру.</div>
+
+        <div class="step">
+          1️⃣ Оставь заявку в боте
+        </div>
+
+        <div class="step">
+          2️⃣ Пройди регистрацию в Яндекс Еде
+        </div>
+
+        <div class="step">
+          3️⃣ Установи приложение Яндекс Про
+        </div>
+
+        <div class="step">
+          4️⃣ Дождись подтверждения аккаунта
+        </div>
+
+        <div class="step">
+          5️⃣ Приди и получи форму / термосумку
+        </div>
+
+        <div class="step">
+          6️⃣ Выбери район и выходи на первые заказы 🚀
+        </div>
+
+        <div class="step-note">
+          📞 Если возникнут вопросы —
+          напиши менеджеру.
+        </div>
+
       </div>
     </div>
 
   </section>
 
   <section id="faq" class="section">
+
     <div class="card">
+
       <h2>❓ Вопросы и ответы</h2>
 
       <div class="faq-item">
-        <div class="faq-question">С какого возраста можно стать курьером?</div>
-        <div class="faq-answer">Стать курьером-партнёром можно с 18 лет.</div>
+        <div class="faq-question">
+          С какого возраста можно стать курьером?
+        </div>
+
+        <div class="faq-answer">
+          Стать курьером-партнёром можно с 18 лет.
+        </div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">Что нужно для начала?</div>
-        <div class="faq-answer">Нужен смартфон с интернетом, регистрация и приложение Яндекс Про.</div>
+        <div class="faq-question">
+          Что нужно для начала?
+        </div>
+
+        <div class="faq-answer">
+          Нужен смартфон с интернетом,
+          регистрация и приложение Яндекс Про.
+        </div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">На чём можно доставлять?</div>
-        <div class="faq-answer">Можно доставлять пешком, на велосипеде, самокате или автомобиле.</div>
+        <div class="faq-question">
+          На чём можно доставлять?
+        </div>
+
+        <div class="faq-answer">
+          Можно доставлять пешком,
+          на велосипеде, самокате или автомобиле.
+        </div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">Можно ли выбрать район?</div>
-        <div class="faq-answer">Да, можно работать в удобном районе Красноярска.</div>
+        <div class="faq-question">
+          Можно ли выбрать район?
+        </div>
+
+        <div class="faq-answer">
+          Да, можно работать в удобном районе Красноярска.
+        </div>
       </div>
+
     </div>
+
   </section>
 
   <section id="profile" class="section">
+
     <div class="card">
       <h2>👤 Кабинет</h2>
-      <p>Здесь собраны подсказки по работе, доходу и следующим шагам.</p>
+
+      <p>
+        Здесь собраны подсказки по работе,
+        доходу и следующим шагам.
+      </p>
     </div>
 
     <div class="card">
       <h2>📍 Районы с высоким спросом</h2>
+
       <p>
         🔥 Центральный — много кафе и удобен для пеших курьеров.<br><br>
+
         🔥 Советский — большие жилые кварталы и стабильный поток заказов.<br><br>
+
         🔥 Взлётка / Северный — активные вечерние заказы.<br><br>
+
         🔥 Железнодорожный — удобно начинать рядом с центром.
       </p>
     </div>
+
   </section>
 
 </div>
 
 <div class="bottom-nav">
-  <button id="nav-home" class="nav-btn active" onclick="openSection('home')">🏠 Главная</button>
-  <button id="nav-faq" class="nav-btn" onclick="openSection('faq')">❓ FAQ</button>
-  <button id="nav-profile" class="nav-btn" onclick="openSection('profile')">👤 Кабинет</button>
+
+  <button
+    id="nav-home"
+    class="nav-btn active"
+    onclick="openSection('home')"
+  >
+    🏠 Главная
+  </button>
+
+  <button
+    id="nav-faq"
+    class="nav-btn"
+    onclick="openSection('faq')"
+  >
+    ❓ FAQ
+  </button>
+
+  <button
+    id="nav-profile"
+    class="nav-btn"
+    onclick="openSection('profile')"
+  >
+    👤 Кабинет
+  </button>
+
 </div>
 
 <script>
+
   let currentRate = 400;
 
   function setTransport(type){
+
     document.getElementById("transport-foot").classList.remove("active");
     document.getElementById("transport-bike").classList.remove("active");
     document.getElementById("transport-car").classList.remove("active");
@@ -432,8 +606,13 @@
   }
 
   function calculateIncome(){
-    const hours = Number(document.getElementById("hours").value || 0);
-    const days = Number(document.getElementById("days").value || 0);
+
+    const hours =
+      Number(document.getElementById("hours").value || 0);
+
+    const days =
+      Number(document.getElementById("days").value || 0);
+
     const total = currentRate * hours * days;
 
     document.getElementById("income-result").innerText =
@@ -441,6 +620,7 @@
   }
 
   function openSection(sectionId){
+
     document.getElementById("home").classList.remove("active");
     document.getElementById("faq").classList.remove("active");
     document.getElementById("profile").classList.remove("active");
@@ -455,6 +635,7 @@
   }
 
   calculateIncome();
+
 </script>
 
 </body>
