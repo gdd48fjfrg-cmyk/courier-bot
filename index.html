@@ -200,6 +200,28 @@
       font-weight:800;
     }
 
+    .friend-check{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      background:#222;
+      border:1px solid #333;
+      border-radius:18px;
+      padding:14px;
+      margin-top:6px;
+      margin-bottom:18px;
+      font-size:15px;
+      font-weight:900;
+      cursor:pointer;
+    }
+
+    .friend-check input{
+      width:22px;
+      height:22px;
+      accent-color:#ffd400;
+      flex-shrink:0;
+    }
+
     .result{
       margin-top:18px;
       background:#ffd400;
@@ -420,6 +442,15 @@
         >
       </div>
 
+      <label class="friend-check">
+        <input
+          type="checkbox"
+          id="friendBonus"
+          onchange="calculateIncome()"
+        >
+        👥 Пригласить друга (+31 200 ₽)
+      </label>
+
       <div class="result">
         <small>Примерный доход</small>
 
@@ -613,7 +644,11 @@
     const days =
       Number(document.getElementById("days").value || 0);
 
-    const total = currentRate * hours * days;
+    let total = currentRate * hours * days;
+
+    if(document.getElementById("friendBonus").checked){
+      total += 31200;
+    }
 
     document.getElementById("income-result").innerText =
       total.toLocaleString("ru-RU") + " ₽";
