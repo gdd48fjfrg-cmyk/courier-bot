@@ -155,8 +155,7 @@
     }
 
     .register-btn:active{transform:scale(.98)}
-
-    .field{margin-bottom:16px}
+        .field{margin-bottom:16px}
 
     label{
       display:block;
@@ -165,7 +164,7 @@
       margin-bottom:8px;
     }
 
-    input{
+    input, select{
       width:100%;
       border:none;
       outline:none;
@@ -175,6 +174,12 @@
       border-radius:18px;
       font-size:18px;
       font-weight:800;
+    }
+
+    select{
+      appearance:none;
+      -webkit-appearance:none;
+      cursor:pointer;
     }
 
     .friend-check{
@@ -239,7 +244,8 @@
       font-size:14px;
       opacity:.8;
     }
-        .faq-item{
+
+    .faq-item{
       background:#202020;
       border:1px solid #303030;
       border-radius:18px;
@@ -331,7 +337,6 @@
       <h2>🚴 Тип доставки</h2>
 
       <div class="transport-grid">
-
         <button id="transport-foot" class="transport-btn active" onclick="setTransport('foot')">
           🚶<br>Пеший
           <div class="transport-price">≈ 400 ₽/час</div>
@@ -346,11 +351,9 @@
           🚗<br>Авто
           <div class="transport-price">≈ 510 ₽/час</div>
         </button>
-
       </div>
     </div>
-
-    <div class="card">
+        <div class="card">
       <h2>🧮 Калькулятор дохода</h2>
 
       <div class="field">
@@ -482,8 +485,8 @@
       <h2>👤 Кабинет</h2>
 
       <p>
-        Здесь собраны подсказки по работе,
-        доходу и следующим шагам.
+        Здесь можно оставить заявку прямо из приложения.
+        Менеджер увидит её в админке бота.
       </p>
     </div>
 
@@ -496,6 +499,7 @@
         <input
           id="appName"
           type="text"
+          maxlength="10"
           placeholder="Например: Иван"
         >
       </div>
@@ -506,6 +510,8 @@
         <input
           id="appPhone"
           type="tel"
+          inputmode="tel"
+          maxlength="18"
           placeholder="+7 999 123-45-67"
         >
       </div>
@@ -513,21 +519,35 @@
       <div class="field">
         <label>Район</label>
 
-        <input
-          id="appDistrict"
-          type="text"
-          placeholder="Например: Советский"
-        >
+        <select id="appDistrict">
+          <option value="">Выбери район</option>
+          <option value="Центральный">Центральный</option>
+          <option value="Советский">Советский</option>
+          <option value="Октябрьский">Октябрьский</option>
+          <option value="Железнодорожный">Железнодорожный</option>
+          <option value="Ленинский">Ленинский</option>
+          <option value="Кировский">Кировский</option>
+          <option value="Свердловский">Свердловский</option>
+          <option value="Другой район">Другой район</option>
+        </select>
       </div>
 
       <div class="field">
         <label>Тип доставки</label>
 
-        <input
-          id="appTransport"
-          type="text"
-          placeholder="Пеший / Вело / Авто"
-        >
+        <div class="transport-grid">
+          <button id="appTransportFoot" type="button" class="transport-btn active" onclick="setAppTransport('Пеший')">
+            🚶<br>Пеший
+          </button>
+
+          <button id="appTransportBike" type="button" class="transport-btn" onclick="setAppTransport('Вело')">
+            🚲<br>Вело
+          </button>
+
+          <button id="appTransportCar" type="button" class="transport-btn" onclick="setAppTransport('Авто')">
+            🚗<br>Авто
+          </button>
+        </div>
       </div>
 
       <button
@@ -560,27 +580,15 @@
 
 <div class="bottom-nav">
 
-  <button
-    id="nav-home"
-    class="nav-btn active"
-    onclick="openSection('home')"
-  >
+  <button id="nav-home" class="nav-btn active" onclick="openSection('home')">
     🏠 Главная
   </button>
 
-  <button
-    id="nav-faq"
-    class="nav-btn"
-    onclick="openSection('faq')"
-  >
+  <button id="nav-faq" class="nav-btn" onclick="openSection('faq')">
     ❓ FAQ
   </button>
 
-  <button
-    id="nav-profile"
-    class="nav-btn"
-    onclick="openSection('profile')"
-  >
+  <button id="nav-profile" class="nav-btn" onclick="openSection('profile')">
     👤 Кабинет
   </button>
 
@@ -589,6 +597,7 @@
 <script>
 
   let currentRate = 400;
+  let selectedAppTransport = "Пеший";
 
   function setTransport(type){
 
@@ -614,13 +623,31 @@
     calculateIncome();
   }
 
+  function setAppTransport(type){
+
+    selectedAppTransport = type;
+
+    document.getElementById("appTransportFoot").classList.remove("active");
+    document.getElementById("appTransportBike").classList.remove("active");
+    document.getElementById("appTransportCar").classList.remove("active");
+
+    if(type === "Пеший"){
+      document.getElementById("appTransportFoot").classList.add("active");
+    }
+
+    if(type === "Вело"){
+      document.getElementById("appTransportBike").classList.add("active");
+    }
+
+    if(type === "Авто"){
+      document.getElementById("appTransportCar").classList.add("active");
+    }
+  }
+
   function calculateIncome(){
 
-    const hours =
-      Number(document.getElementById("hours").value || 0);
-
-    const days =
-      Number(document.getElementById("days").value || 0);
+    const hours = Number(document.getElementById("hours").value || 0);
+    const days = Number(document.getElementById("days").value || 0);
 
     let total = currentRate * hours * days;
 
@@ -634,39 +661,49 @@
 
   function sendApplication(){
 
-    const name =
-      document.getElementById("appName").value.trim();
+    const name = document.getElementById("appName").value.trim();
+    const phoneRaw = document.getElementById("appPhone").value.trim();
+    const district = document.getElementById("appDistrict").value;
 
-    const phone =
-      document.getElementById("appPhone").value.trim();
+    const nameRegex = /^[А-Яа-яЁёA-Za-z\s-]{2,10}$/;
 
-    const district =
-      document.getElementById("appDistrict").value.trim();
-
-    const transport =
-      document.getElementById("appTransport").value.trim();
-
-    if(!name || !phone || !district || !transport){
-
+    if(!nameRegex.test(name)){
       document.getElementById("appStatus").innerText =
-        "Заполни все поля";
-
+        "Введите корректное имя до 10 символов";
       return;
     }
+
+    let phoneDigits = phoneRaw.replace(/\D/g, "");
+
+    if(phoneDigits.length === 11 && phoneDigits.startsWith("8")){
+      phoneDigits = "7" + phoneDigits.slice(1);
+    }
+
+    if(phoneDigits.length !== 11 || !phoneDigits.startsWith("7")){
+      document.getElementById("appStatus").innerText =
+        "Введите российский номер: +7 999 123-45-67";
+      return;
+    }
+
+    if(!district){
+      document.getElementById("appStatus").innerText =
+        "Выберите район";
+      return;
+    }
+
+    const phone = "+" + phoneDigits;
 
     const data = {
       type: "webapp_application",
       name: name,
       phone: phone,
       district: district,
-      transport: transport
+      transport: selectedAppTransport
     };
 
     if(window.Telegram && Telegram.WebApp){
 
-      Telegram.WebApp.sendData(
-        JSON.stringify(data)
-      );
+      Telegram.WebApp.sendData(JSON.stringify(data));
 
       document.getElementById("appStatus").innerText =
         "✅ Заявка отправлена";
