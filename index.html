@@ -2,265 +2,26 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Яндекс Еда — Красноярск</title>
-
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <title>Курьер Яндекс Еды — Красноярск</title>
 
   <style>
     *{
       box-sizing:border-box;
-      -webkit-tap-highlight-color:transparent;
     }
 
     body{
       margin:0;
-      background:#121100;
+      background:#0f0f0f;
       color:white;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-      padding-bottom:120px;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     }
 
     .app{
       max-width:520px;
       margin:0 auto;
-      padding:18px;
-    }
-    .steps{
-  margin-top:14px;
-  }
-
-.step{
-  background:#1f1f1f;
-  border:1px solid #2f2f2f;
-  border-radius:16px;
-  padding:14px;
-  margin-bottom:10px;
-  line-height:1.5;
-  font-weight:600;
-  }
-
-  .step-note{
-  margin-top:14px;
-  text-align:center;
-  font-size:14px;
-  opacity:.8;
-  }
-    .hero{
-      background:linear-gradient(135deg,#ffd53d,#ff9f2e);
-      border-radius:36px;
-      padding:30px;
-      color:#111;
-      margin-bottom:20px;
-    }
-
-    .badge{
-      display:inline-block;
-      background:rgba(0,0,0,.15);
-      padding:10px 16px;
-      border-radius:999px;
-      font-size:16px;
-      font-weight:900;
-      margin-bottom:28px;
-    }
-
-    .brand{
-      font-size:38px;
-      font-weight:950;
-      margin-bottom:24px;
-    }
-
-    .brand span{
-      color:#e9291a;
-    }
-
-    .hero h1{
-      margin:0 0 18px;
-      font-size:42px;
-      line-height:1.05;
-      font-weight:950;
-    }
-
-    .hero p{
-      margin:0;
-      font-size:22px;
-      line-height:1.35;
-      font-weight:850;
-    }
-
-    .card{
-      background:#1b1b1b;
-      border:1px solid #333;
-      border-radius:30px;
-      padding:24px;
-      margin-bottom:20px;
-    }
-
-    .section.active .card,
-    .section.active .hero{
-      animation:fadeUp .35s ease both;
-    }
-
-    @keyframes fadeUp{
-      from{
-        opacity:0;
-        transform:translateY(14px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
-
-    h2{
-      margin:0 0 20px;
-      font-size:30px;
-      line-height:1.1;
-    }
-
-    .benefits{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
-    }
-
-    .benefit{
-      background:#252525;
-      border:1px solid #383838;
-      border-radius:24px;
-      padding:18px;
-      font-size:18px;
-      line-height:1.4;
-      font-weight:700;
-    }
-
-    .benefit.gold{
-      background:#3a331d;
-      border-color:#7a6412;
-    }
-
-    label{
-      display:block;
-      color:#bdbdbd;
-      font-size:18px;
-      margin:18px 0 10px;
-      font-weight:700;
-    }
-
-    input,
-    select{
-      width:100%;
-      border:1px solid #3a3a3a;
-      background:#252525;
-      color:white;
-      border-radius:22px;
-      padding:20px;
-      font-size:22px;
-      outline:none;
-    }
-
-    input:focus,
-    select:focus{
-      border-color:#ffd400;
-    }
-
-    .transport-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      gap:12px;
-      margin-top:10px;
-    }
-
-    .transport-btn{
-      border:1px solid #3a3a3a;
-      background:#252525;
-      color:white;
-      border-radius:22px;
-      padding:16px 8px;
-      font-size:16px;
-      font-weight:900;
-      cursor:pointer;
-    }
-
-    .transport-btn.active{
-      background:#ffd400;
-      color:#111;
-      border-color:#ffd400;
-    }
-
-    .friend-row{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-top:12px;
-    }
-
-    .friend-btn{
-      border:1px solid #3a3a3a;
-      background:#252525;
-      color:white;
-      border-radius:22px;
-      padding:16px;
-      font-size:17px;
-      font-weight:900;
-      cursor:pointer;
-    }
-
-    .friend-btn.active{
-      background:#3a331d;
-      border-color:#ffd400;
-      color:#ffd400;
-    }
-
-    .income-box{
-      margin-top:22px;
-      background:linear-gradient(135deg,#ffd53d,#ff9f2e);
-      color:#111;
-      border-radius:26px;
-      padding:22px;
-      text-align:center;
-    }
-
-    .income-title{
-      font-size:17px;
-      font-weight:800;
-      opacity:.75;
-      margin-bottom:8px;
-    }
-
-    .income-value{
-      font-size:38px;
-      font-weight:950;
-    }
-
-    .small-note{
-      color:#aaa;
-      font-size:15px;
-      line-height:1.45;
-      margin-top:12px;
-    }
-
-    .btn{
-      width:100%;
-      border:none;
-      border-radius:24px;
-      padding:20px;
-      margin-top:20px;
-      font-size:22px;
-      font-weight:950;
-      cursor:pointer;
-    }
-
-    .btn-yellow{
-      background:#ffd400;
-      color:#111;
-    }
-
-    .btn-dark{
-      background:#2a2a2a;
-      color:white;
-      border:1px solid #3a3a3a;
+      padding:18px 18px 120px;
     }
 
     .section{
@@ -269,38 +30,193 @@
 
     .section.active{
       display:block;
+      animation:safeFade .35s ease;
     }
 
-    .faq-buttons{
+    .hero{
+      background:linear-gradient(135deg,#ffd400,#ffb800);
+      color:#111;
+      border-radius:30px;
+      padding:24px;
+      margin-bottom:18px;
+      box-shadow:0 14px 35px rgba(255,212,0,.18);
+    }
+
+    .hero h1{
+      margin:0;
+      font-size:30px;
+      line-height:1.15;
+      font-weight:950;
+    }
+
+    .hero p{
+      margin:12px 0 0;
+      font-size:16px;
+      line-height:1.45;
+      font-weight:600;
+    }
+
+    .income-banner{
+      margin-top:18px;
+      background:rgba(255,255,255,.78);
+      border-radius:20px;
+      padding:14px;
+      text-align:center;
+    }
+
+    .income-banner small{
+      display:block;
+      opacity:.75;
+      margin-bottom:5px;
+      font-weight:700;
+    }
+
+    .income-banner strong{
+      font-size:24px;
+      font-weight:950;
+    }
+
+    .card{
+      background:#181818;
+      border:1px solid #2a2a2a;
+      border-radius:26px;
+      padding:20px;
+      margin-bottom:16px;
+      box-shadow:0 10px 28px rgba(0,0,0,.22);
+      animation:safeFade .4s ease;
+    }
+
+    .card h2{
+      margin:0 0 16px;
+      font-size:24px;
+      font-weight:950;
+    }
+
+    .card p{
+      line-height:1.55;
+      color:#d4d4d4;
+    }
+
+    .transport-grid{
       display:grid;
-      gap:12px;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:10px;
+      margin-top:12px;
     }
 
-    .faq-btn{
-      background:#252525;
-      border:1px solid #383838;
+    .transport-btn{
+      border:1px solid #333;
+      background:#222;
       color:white;
+      border-radius:20px;
+      padding:14px 6px;
+      font-size:17px;
+      font-weight:900;
+      cursor:pointer;
+      transition:transform .16s ease, border-color .16s ease, background .16s ease;
+    }
+
+    .transport-btn:active{
+      transform:scale(.96);
+    }
+
+    .transport-btn.active{
+      background:#ffd400;
+      color:#111;
+      border-color:#ffd400;
+    }
+
+    .transport-price{
+      margin-top:8px;
+      font-size:13px;
+      font-weight:800;
+      opacity:.86;
+      line-height:1.25;
+    }
+
+    .field{
+      margin-top:16px;
+    }
+
+    label{
+      display:block;
+      font-size:15px;
+      font-weight:800;
+      margin-bottom:8px;
+    }
+
+    input{
+      width:100%;
+      border:none;
+      outline:none;
+      background:#252525;
+      color:white;
+      padding:16px;
+      border-radius:18px;
+      font-size:18px;
+      font-weight:700;
+    }
+
+    .result{
+      margin-top:18px;
+      background:#ffd400;
+      color:#111;
       border-radius:22px;
       padding:18px;
-      font-size:18px;
+      text-align:center;
+    }
+
+    .result small{
+      font-weight:800;
+      opacity:.8;
+    }
+
+    .result-value{
+      margin-top:6px;
+      font-size:34px;
+      font-weight:950;
+      transition:.2s ease;
+    }
+
+    .steps{
+      margin-top:14px;
+    }
+
+    .step{
+      background:#222;
+      border:1px solid #333;
+      border-radius:16px;
+      padding:14px;
+      margin-bottom:10px;
+      line-height:1.45;
+      font-weight:700;
+    }
+
+    .step-note{
+      margin-top:14px;
+      text-align:center;
+      font-size:14px;
+      opacity:.8;
+    }
+
+    .faq-item{
+      background:#202020;
+      border:1px solid #303030;
+      border-radius:18px;
+      padding:15px;
+      margin-bottom:10px;
+    }
+
+    .faq-question{
       font-weight:900;
-      text-align:left;
-      cursor:pointer;
+      font-size:16px;
+      margin-bottom:8px;
     }
 
     .faq-answer{
-      display:none;
-      background:#3a331d;
-      border:1px solid #7a6412;
-      border-radius:22px;
-      padding:18px;
-      margin-top:12px;
-      font-size:18px;
-      line-height:1.45;
-    }
-
-    .faq-answer.active{
-      display:block;
+      color:#d0d0d0;
+      line-height:1.5;
+      font-size:15px;
     }
 
     .profile-box{
@@ -343,24 +259,34 @@
       background:#252525;
       color:white;
       border-radius:26px;
-      padding:18px 6px;
-      font-size:17px;
+      padding:16px 6px;
+      font-size:16px;
       font-weight:950;
       cursor:pointer;
+      transition:.16s ease;
+    }
+
+    .nav-btn:active{
+      transform:scale(.96);
     }
 
     .nav-btn.active{
       background:#ffd400;
       color:#111;
       border-color:#ffd400;
-    } 
-    
-    .transport-price{
-  margin-top:8px;
-  font-size:13px;
-  font-weight:700;
-  opacity:.85;
-}
+    }
+
+    @keyframes safeFade{
+      from{
+        opacity:0;
+        transform:translateY(8px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
   </style>
 </head>
 
@@ -368,605 +294,199 @@
 
 <div class="app">
 
-<section id="home" class="section active">
+  <section id="home" class="section active">
 
-  <div class="hero">
-    <div class="badge">⚡ Быстрое подключение</div>
-    <div class="brand"><span>Я</span>ндекс Еда</div>
-    <h1>Работа курьером</h1>
-    <p>Доход до 180 000 ₽ · свободный график · можно без опыта</p>
-  </div>
+    <div class="hero">
+      <h1>🍕 Работа курьером<br>Яндекс Еды</h1>
 
-  <div class="card">
-    <h2>🔥 Почему это удобно</h2>
+      <p>
+        Красноярск. Свободный график, удобные районы и быстрый старт.
+      </p>
 
-    <div class="benefits">
-      <div class="benefit gold">💰 До 180 000 ₽ в месяц</div>
-      <div class="benefit">🕘 График под себя</div>
-      <div class="benefit">📍 Работа рядом с домом</div>
-      <div class="benefit">🚴 Пеший / вело / авто</div>
-    </div>
-  </div>
-
-
-  <div class="card">
-    <h2>🧮 Калькулятор дохода</h2>
-
-    <label>Тип доставки</label>
-<div class="transport-grid">
-  <button id="transport-foot" class="transport-btn active" onclick="setTransport('foot')">
-    🚶<br>
-    Пеший
-    <div class="transport-price">≈ 400 ₽/час</div>
-  </button>
-
-  <button id="transport-bike" class="transport-btn" onclick="setTransport('bike')">
-    🚲<br>
-    Вело
-    <div class="transport-price">≈ 450 ₽/час</div>
-  </button>
-
-  <button id="transport-car" class="transport-btn" onclick="setTransport('car')">
-    🚗<br>
-    Авто
-    <div class="transport-price">≈ 510 ₽/час</div>
-  </button>
-</div>
-
-    <label for="days">Дней в неделю</label>
-    <input id="days" type="number" value="5" min="1" max="7" oninput="limitDays(this)" onblur="fixEmptyDays(this)">
-
-    <label for="hours">Часов в день</label>
-    <input id="hours" type="number" value="4" min="1" max="12" oninput="limitHours(this)" onblur="fixEmptyHours(this)">
-
-    <label>Пригласил друга?</label>
-
-    <div class="friend-row">
-      <button id="friend-no" class="friend-btn active" onclick="setFriendBonus(false)">Нет</button>
-      <button id="friend-yes" class="friend-btn" onclick="setFriendBonus(true)">+31 200 ₽</button>
+      <div class="income-banner">
+        <small>🔥 Средний доход в Красноярске</small>
+        <strong>80 000 – 120 000 ₽/мес</strong>
+      </div>
     </div>
 
-    <div class="income-box">
-      <div class="income-title">Примерный доход в месяц</div>
-      <div class="income-value" id="incomeResult">0 ₽</div>
+    <div class="card">
+      <h2>🚴 Тип доставки</h2>
+
+      <div class="transport-grid">
+        <button id="transport-foot" class="transport-btn active" onclick="setTransport('foot')">
+          🚶<br>Пеший
+          <div class="transport-price">≈ 400 ₽/час</div>
+        </button>
+
+        <button id="transport-bike" class="transport-btn" onclick="setTransport('bike')">
+          🚲<br>Вело
+          <div class="transport-price">≈ 450 ₽/час</div>
+        </button>
+
+        <button id="transport-car" class="transport-btn" onclick="setTransport('car')">
+          🚗<br>Авто
+          <div class="transport-price">≈ 510 ₽/час</div>
+        </button>
+      </div>
     </div>
 
-    <div class="small-note">
-      Реальный доход зависит от времени, района, спроса и количества заказов.
-    </div>
-  </div>
-<div class="card">
-  <h2>📋 Что делать дальше</h2>
+    <div class="card">
+      <h2>🧮 Калькулятор дохода</h2>
 
-  <div class="steps">
-    <div class="step">1️⃣ Оставь заявку в боте</div>
-
-    <div class="step">
-      2️⃣ Пройди регистрацию в Яндекс Еде
-    </div>
-
-    <div class="step">
-      3️⃣ Установи приложение Яндекс Про
-    </div>
-
-    <div class="step">
-      4️⃣ Дождись подтверждения аккаунта
-    </div>
-
-    <div class="step">
-      5️⃣ Приди и получи форму / термосумку
-    </div>
-
-    <div class="step">
-      6️⃣ Выбери район и выходи на первые заказы 🚀
-    </div>
-
-    <div class="step-note">
-      📞 Если возникнут вопросы —
-      напиши менеджеру.
-    </div>
-  </div
-</section>
-<section id="application" class="section">
-
-  <div class="card">
-    <h2>🚀 Заявка</h2>
-
-    <label for="name">Имя</label>
-
-    <input
-  id="name"
-  type="text"
-  maxlength="10"
-  placeholder="Например: Иван"
-  oninput="this.value=this.value.replace(/[^А-Яа-яЁёA-Za-z]/g,'')"
-/>
-
-    <label for="phone">Телефон РФ</label>
-
-    <input
-      id="phone"
-      type="tel"
-      inputmode="numeric"
-      maxlength="18"
-      placeholder="+7 999 123-45-67"
-      oninput="formatPhone(this)"
-    >
-
-    <label for="district">Район</label>
-
-    <select id="district">
-      <option value="">Выбери район</option>
-
-      <option>Центральный</option>
-      <option>Советский</option>
-      <option>Октябрьский</option>
-      <option>Железнодорожный</option>
-      <option>Свердловский</option>
-      <option>Кировский</option>
-      <option>Ленинский</option>
-      <option>Покровка</option>
-      <option>Взлётка</option>
-      <option>Северный</option>
-      <option>Солнечный</option>
-      <option>Зелёная Роща</option>
-      <option>Черёмушки</option>
-      <option>Студгородок</option>
-    </select>
-
-    <button
-      class="btn btn-yellow"
-      onclick="submitApplication()">
-
-      Отправить заявку
-
-    </button>
-
-    <button
-      class="btn btn-dark"
-      onclick="showSection('home')">
-
-      Назад
-
-    </button>
-
-  </div>
-
-</section>
-
-<section id="profile" class="section">
-
-  <div class="card">
-
-    <h2>👤 Кабинет</h2>
-
-    <div class="profile-box">
-
-      <div class="profile-name" id="profileName">
-        Курьер
+      <div class="field">
+        <label>Часов в день</label>
+        <input id="hours" type="number" value="8" min="1" max="16" oninput="calculateIncome()">
       </div>
 
-      <div class="profile-id" id="profileId">
-        Telegram ID
+      <div class="field">
+        <label>Дней в месяц</label>
+        <input id="days" type="number" value="22" min="1" max="31" oninput="calculateIncome()">
+      </div>
+
+      <div class="result">
+        <small>Примерный доход</small>
+        <div id="income-result" class="result-value">70 400 ₽</div>
+      </div>
+    </div>
+        <div class="card">
+      <h2>📋 Что делать дальше</h2>
+
+      <div class="steps">
+        <div class="step">1️⃣ Оставь заявку в боте</div>
+        <div class="step">2️⃣ Пройди регистрацию в Яндекс Еде</div>
+        <div class="step">3️⃣ Установи приложение Яндекс Про</div>
+        <div class="step">4️⃣ Дождись подтверждения аккаунта</div>
+        <div class="step">5️⃣ Приди и получи форму / термосумку</div>
+        <div class="step">6️⃣ Выбери район и выходи на первые заказы 🚀</div>
+
+        <div class="step-note">
+          📞 Если возникнут вопросы — напиши менеджеру.
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="faq" class="section">
+
+    <div class="card">
+      <h2>❓ Вопросы и ответы</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">С какого возраста можно стать курьером?</div>
+        <div class="faq-answer">Стать курьером-партнёром можно с 18 лет.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Что нужно для начала?</div>
+        <div class="faq-answer">Нужен смартфон с интернетом, регистрация и приложение Яндекс Про.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">На чём можно доставлять?</div>
+        <div class="faq-answer">Можно доставлять пешком, на велосипеде, самокате или автомобиле.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Можно ли выбрать район?</div>
+        <div class="faq-answer">Да, можно работать в удобном районе Красноярска.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Что делать после регистрации?</div>
+        <div class="faq-answer">Установить Яндекс Про, дождаться подтверждения, получить форму / термосумку и выйти на первые заказы.</div>
       </div>
 
     </div>
 
-    <div class="faq-answer active">
-      ✅ Повторную заявку с одного Telegram-аккаунта отправить нельзя.
+  </section>
+
+  <section id="profile" class="section">
+
+    <div class="card">
+      <h2>👤 Кабинет</h2>
+
+      <div class="profile-box">
+        <div class="profile-name">Курьер</div>
+        <div class="profile-id">Красноярск</div>
+      </div>
+
+      <p>
+        Здесь можно смотреть подсказки по работе, доходу и следующим шагам.
+      </p>
     </div>
 
-  </div>
+    <div class="card">
+      <h2>📍 Районы с высоким спросом</h2>
 
-  <div class="card" id="faq-block">
-
-    <h2>❓ Частые вопросы</h2>
-
-    <div class="faq-buttons">
-
-      <button class="faq-btn" onclick="toggleFaq('faq1')">
-        💰 Можно ли получать выплаты ежедневно?
-      </button>
-
-      <div id="faq1" class="faq-answer">
-        Да, для курьеров-партнёров доступны ежедневные выплаты.
-      </div>
-
-      <button class="faq-btn" onclick="toggleFaq('faq2')">
-        🕘 Можно совмещать с основной работой?
-      </button>
-
-      <div id="faq2" class="faq-answer">
-        Да, график свободный и подходит для совмещения.
-      </div>
-
-      <button class="faq-btn" onclick="toggleFaq('faq3')">
-        🚴 Можно без опыта?
-      </button>
-
-      <div id="faq3" class="faq-answer">
-        Да, можно начать без опыта.
-      </div>
-
-      <button class="faq-btn" onclick="toggleFaq('faq4')">
-        👥 Есть бонус за приглашение друга?
-      </button>
-
-      <div id="faq4" class="faq-answer">
-        Да, действует бонус за приглашение новичка-курьера.
-      </div>
-
+      <p>
+        🔥 Центральный — много кафе и удобен для пеших курьеров.<br><br>
+        🔥 Советский — большие жилые кварталы и стабильный поток заказов.<br><br>
+        🔥 Взлётка / Северный — активные вечерние заказы.<br><br>
+        🔥 Железнодорожный — удобно начинать рядом с центром.
+      </p>
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 </div>
 
 <div class="bottom-nav">
-
-  <button
-    id="nav-application"
-    class="nav-btn"
-    onclick="showSection('application')">
-
-    🚀<br>Заявка
-
-  </button>
-
-  <button
-    id="nav-profile"
-    class="nav-btn"
-    onclick="showSection('profile')">
-
-    👤<br>Кабинет
-
-  </button>
-
-  <button
-    id="nav-faq"
-    class="nav-btn"
-    onclick="showFaq()">
-
-    ❓<br>FAQ
-
-  </button>
-
+  <button id="nav-home" class="nav-btn active" onclick="openSection('home')">🏠 Главная</button>
+  <button id="nav-faq" class="nav-btn" onclick="openSection('faq')">❓ FAQ</button>
+  <button id="nav-profile" class="nav-btn" onclick="openSection('profile')">👤 Кабинет</button>
 </div>
 
 <script>
-
-  const tg = window.Telegram.WebApp;
-
-  tg.expand();
-
-  let selectedTransport = "foot";
-  let incomePerHour = 400;
-  let friendBonus = false;
-
-  const friendBonusAmount = 31200;
-
-  if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
-
-    document.getElementById("profileName").innerText =
-      tg.initDataUnsafe.user.first_name || "Курьер";
-
-    document.getElementById("profileId").innerText =
-      "ID: " + tg.initDataUnsafe.user.id;
-  }
-
-  function showSection(sectionId){
-
-    document.querySelectorAll(".section")
-      .forEach(section=>{
-        section.classList.remove("active");
-      });
-
-    document.querySelectorAll(".nav-btn")
-      .forEach(button=>{
-        button.classList.remove("active");
-      });
-
-    document.getElementById(sectionId)
-      .classList.add("active");
-
-    const activeButton =
-      document.getElementById("nav-" + sectionId);
-
-    if(activeButton){
-      activeButton.classList.add("active");
-    }
-
-    window.scrollTo({
-      top:0,
-      behavior:"smooth"
-    });
-  }
-
-  function showFaq(){
-
-    showSection("profile");
-
-    document.querySelectorAll(".nav-btn")
-      .forEach(button=>{
-        button.classList.remove("active");
-      });
-
-    document.getElementById("nav-faq")
-      .classList.add("active");
-
-    setTimeout(()=>{
-
-      document.getElementById("faq-block")
-        .scrollIntoView({
-          behavior:"smooth",
-          block:"start"
-        });
-
-    },150);
-  }
+  let currentRate = 400;
 
   function setTransport(type){
+    document.getElementById("transport-foot").classList.remove("active");
+    document.getElementById("transport-bike").classList.remove("active");
+    document.getElementById("transport-car").classList.remove("active");
 
-    selectedTransport = type;
+    if(type === "foot"){
+      currentRate = 400;
+      document.getElementById("transport-foot").classList.add("active");
+    }
 
-    if(type === "foot") incomePerHour = 400;
-    if(type === "bike") incomePerHour = 450;
-    if(type === "car") incomePerHour = 510;
+    if(type === "bike"){
+      currentRate = 450;
+      document.getElementById("transport-bike").classList.add("active");
+    }
 
-    document.querySelectorAll(".transport-btn")
-      .forEach(button=>{
-        button.classList.remove("active");
-      });
-
-    document.getElementById("transport-" + type)
-      .classList.add("active");
-
-    calculateIncome();
-  }
-
-  function setFriendBonus(value){
-
-    friendBonus = value;
-
-    document.getElementById("friend-no")
-      .classList.remove("active");
-
-    document.getElementById("friend-yes")
-      .classList.remove("active");
-
-    if(value){
-
-      document.getElementById("friend-yes")
-        .classList.add("active");
-
-    }else{
-
-      document.getElementById("friend-no")
-        .classList.add("active");
+    if(type === "car"){
+      currentRate = 510;
+      document.getElementById("transport-car").classList.add("active");
     }
 
     calculateIncome();
-  }
-
-  function toggleFaq(id){
-
-    document.getElementById(id)
-      .classList.toggle("active");
-  }
-
-  function limitDays(input){
-
-    let value =
-      input.value.replace(/\D/g,"");
-
-    if(value === ""){
-
-      input.value = "";
-      calculateIncome();
-      return;
-    }
-
-    value = Number(value);
-
-    if(value > 7) value = 7;
-    if(value < 1) value = 1;
-
-    input.value = value;
-
-    calculateIncome();
-  }
-
-  function limitHours(input){
-
-    let value =
-      input.value.replace(/\D/g,"");
-
-    if(value === ""){
-
-      input.value = "";
-      calculateIncome();
-      return;
-    }
-
-    value = Number(value);
-
-    if(value > 12) value = 12;
-    if(value < 1) value = 1;
-
-    input.value = value;
-
-    calculateIncome();
-  }
-
-  function fixEmptyDays(input){
-
-    if(input.value === ""){
-
-      input.value = 1;
-      calculateIncome();
-    }
-  }
-
-  function fixEmptyHours(input){
-
-    if(input.value === ""){
-
-      input.value = 1;
-      calculateIncome();
-    }
   }
 
   function calculateIncome(){
+    const hours = Number(document.getElementById("hours").value || 0);
+    const days = Number(document.getElementById("days").value || 0);
+    const total = currentRate * hours * days;
 
-    const days =
-      Number(document.getElementById("days").value) || 0;
-
-    const hours =
-      Number(document.getElementById("hours").value) || 0;
-
-    let monthlyIncome =
-      days * hours * incomePerHour * 4;
-
-    if(friendBonus){
-      monthlyIncome += friendBonusAmount;
-    }
-
-    document.getElementById("incomeResult").innerText =
-      monthlyIncome.toLocaleString("ru-RU") + " ₽";
+    document.getElementById("income-result").innerText =
+      total.toLocaleString("ru-RU") + " ₽";
   }
 
-  function formatPhone(input){
+  function openSection(sectionId){
+    document.getElementById("home").classList.remove("active");
+    document.getElementById("faq").classList.remove("active");
+    document.getElementById("profile").classList.remove("active");
 
-    let value =
-      input.value.replace(/\D/g,"");
+    document.getElementById(sectionId).classList.add("active");
 
-    if(
-      value.length > 0 &&
-      value[0] !== "7" &&
-      value[0] !== "8"
-    ){
-      value = "7" + value;
-    }
+    document.getElementById("nav-home").classList.remove("active");
+    document.getElementById("nav-faq").classList.remove("active");
+    document.getElementById("nav-profile").classList.remove("active");
 
-    value = value.substring(0,11);
-
-    let formatted = "";
-
-    if(value.length > 0){
-
-      formatted = "+7";
-
-      if(value.length > 1){
-        formatted += " " + value.substring(1,4);
-      }
-
-      if(value.length >= 5){
-        formatted += " " + value.substring(4,7);
-      }
-
-      if(value.length >= 8){
-        formatted += "-" + value.substring(7,9);
-      }
-
-      if(value.length >= 10){
-        formatted += "-" + value.substring(9,11);
-      }
-    }
-
-    input.value = formatted;
+    document.getElementById("nav-" + sectionId).classList.add("active");
   }
 
-  function isValidRussianPhone(phone){
-
-    const digits =
-      phone.replace(/\D/g,"");
-
-    if(digits.length !== 11){
-      return false;
-    }
-
-    if(digits[0] !== "7" && digits[0] !== "8"){
-      return false;
-    }
-
-    return true;
-  }
-
-  function normalizeRussianPhone(phone){
-
-    const digits =
-      phone.replace(/\D/g,"");
-
-    if(digits[0] === "8"){
-      return "+7" + digits.slice(1);
-    }
-
-    return "+" + digits;
-  }
-
-  function submitApplication(){
-
-  const name =
-    document.getElementById("name").value.trim();
-
-  const phone =
-    document.getElementById("phone").value.trim();
-
-  const district =
-    document.getElementById("district").value;
-
-  // Только буквы, от 2 до 10 символов
-  const nameRegex = /^[А-Яа-яЁёA-Za-z]{2,10}$/;
-
-  if(!nameRegex.test(name)){
-
-    alert(
-      "Имя: только буквы, от 2 до 10 символов"
-    );
-
-    return;
-  }
-
-  if(!isValidRussianPhone(phone)){
-
-    alert(
-      "Введите настоящий номер РФ"
-    );
-
-    return;
-  }
-
-  if(!district){
-
-    alert("Выберите район");
-
-    return;
-  }
-
-  const application = {
-
-    name:name,
-
-    phone:
-      normalizeRussianPhone(phone),
-
-    district:district,
-
-    transport:selectedTransport,
-
-    friendBonus:friendBonus
-  };
-
-  Telegram.WebApp.sendData(
-    JSON.stringify(application)
-  );
-
-  Telegram.WebApp.close();
-}
   calculateIncome();
-
 </script>
 
 </body>
