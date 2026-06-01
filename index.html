@@ -348,7 +348,7 @@
     <div class="badge">⚡ Быстрое подключение</div>
     <div class="brand"><span>Я</span>ндекс Еда</div>
     <h1>Работа курьером</h1>
-    <p>Доход до 120 000 ₽ · свободный график · можно без опыта</p>
+    <p>Доход до 180 000 ₽ · свободный график · можно без опыта</p>
   </div>
 
   <div class="card">
@@ -367,12 +367,25 @@
     <h2>🧮 Калькулятор дохода</h2>
 
     <label>Тип доставки</label>
+<div class="transport-grid">
+  <button id="transport-foot" class="transport-btn active" onclick="setTransport('foot')">
+    🚶<br>
+    Пеший
+    <div class="transport-price">≈ 400 ₽/час</div>
+  </button>
 
-    <div class="transport-grid">
-      <button id="transport-foot" class="transport-btn active" onclick="setTransport('foot')">🚶<br>Пеший</button>
-      <button id="transport-bike" class="transport-btn" onclick="setTransport('bike')">🚲<br>Вело</button>
-      <button id="transport-car" class="transport-btn" onclick="setTransport('car')">🚗<br>Авто</button>
-    </div>
+  <button id="transport-bike" class="transport-btn" onclick="setTransport('bike')">
+    🚲<br>
+    Вело
+    <div class="transport-price">≈ 450 ₽/час</div>
+  </button>
+
+  <button id="transport-car" class="transport-btn" onclick="setTransport('car')">
+    🚗<br>
+    Авто
+    <div class="transport-price">≈ 510 ₽/час</div>
+  </button>
+</div>
 
     <label for="days">Дней в неделю</label>
     <input id="days" type="number" value="5" min="1" max="7" oninput="limitDays(this)" onblur="fixEmptyDays(this)">
