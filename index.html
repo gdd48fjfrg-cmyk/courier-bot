@@ -365,7 +365,7 @@
           value="8"
           min="1"
           max="16"
-          oninput="calculateIncome()"
+          oninput="limitNumber(this,1,16); calculateIncome();"
         >
       </div>
 
@@ -378,7 +378,7 @@
           value="22"
           min="1"
           max="31"
-          oninput="calculateIncome()"
+          oninput="limitNumber(this,1,31); calculateIncome();"
         >
       </div>
 
@@ -500,7 +500,9 @@
           id="appName"
           type="text"
           maxlength="10"
+          inputmode="text"
           placeholder="Например: Иван"
+          oninput="formatName(this)"
         >
       </div>
 
@@ -510,9 +512,10 @@
         <input
           id="appPhone"
           type="tel"
-          inputmode="tel"
+          inputmode="numeric"
           maxlength="18"
           placeholder="+7 999 123-45-67"
+          oninput="formatPhone(this)"
         >
       </div>
 
@@ -598,6 +601,62 @@
 
   let currentRate = 400;
   let selectedAppTransport = "Пеший";
+
+  function formatName(input){
+    input.value = input.value
+      .replace(/[^А-Яа-яЁёA-Za-z\s-]/g, "")
+      .slice(0, 10);
+  }
+
+  function formatPhone(input){
+    let v = input.value.replace(/\D/g, "");
+
+    if(v.startsWith("8")){
+      v = "7" + v.slice(1);
+    }
+
+    if(v && !v.startsWith("7")){
+      v = "7" + v;
+    }
+
+    v = v.slice(0, 11);
+
+    let formatted = "+7";
+
+    if(v.length > 1){
+      formatted += " " + v.slice(1, 4);
+    }
+
+    if(v.length > 4){
+      formatted += " " + v.slice(4, 7);
+    }
+
+    if(v.length > 7){
+      formatted += "-" + v.slice(7, 9);
+    }
+
+    if(v.length > 9){
+      formatted += "-" + v.slice(9, 11);
+    }
+
+    input.value = formatted;
+  }
+
+  function limitNumber(input, min, max){
+    let value = Number(input.value);
+
+    if(input.value === ""){
+      return;
+    }
+
+    if(value > max){
+      input.value = max;
+    }
+
+    if(value < min){
+      input.value = min;
+    }
+  }
 
   function setTransport(type){
 
