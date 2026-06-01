@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Яндекс Еда — Курьер Красноярск</title>
 
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
   <style>
     *{box-sizing:border-box}
 
@@ -21,9 +23,7 @@
       padding:18px 18px 120px;
     }
 
-    .section{
-      display:none;
-    }
+    .section{display:none}
 
     .section.active{
       display:block;
@@ -57,9 +57,7 @@
       font-size:18px;
     }
 
-    .ya-red{
-      color:#ff3b30;
-    }
+    .ya-red{color:#ff3b30}
 
     h1{
       font-size:32px;
@@ -102,9 +100,7 @@
       margin-bottom:5px;
     }
 
-    .income-banner b{
-      font-size:23px;
-    }
+    .income-banner b{font-size:23px}
 
     .transport-grid{
       display:grid;
@@ -124,9 +120,7 @@
       transition:.18s ease;
     }
 
-    .transport-btn:active{
-      transform:scale(.96);
-    }
+    .transport-btn:active{transform:scale(.96)}
 
     .transport-btn.active{
       background:#ffd400;
@@ -155,15 +149,14 @@
       font-weight:950;
       font-size:17px;
       transition:.18s ease;
+      border:none;
+      width:100%;
+      cursor:pointer;
     }
 
-    .register-btn:active{
-      transform:scale(.98);
-    }
+    .register-btn:active{transform:scale(.98)}
 
-    .field{
-      margin-bottom:16px;
-    }
+    .field{margin-bottom:16px}
 
     label{
       display:block;
@@ -228,9 +221,7 @@
       transition:.2s ease;
     }
 
-    .steps{
-      margin-top:14px;
-    }
+    .steps{margin-top:14px}
 
     .step{
       background:#222;
@@ -297,9 +288,7 @@
       transition:.18s ease;
     }
 
-    .nav-btn:active{
-      transform:scale(.96);
-    }
+    .nav-btn:active{transform:scale(.96)}
 
     .nav-btn.active{
       background:#ffd400;
@@ -308,15 +297,8 @@
     }
 
     @keyframes fadeUp{
-      from{
-        opacity:0;
-        transform:translateY(10px);
-      }
-
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
+      from{opacity:0;transform:translateY(10px)}
+      to{opacity:1;transform:translateY(0)}
     }
   </style>
 </head>
@@ -435,36 +417,17 @@
       <h2>📋 Что делать дальше</h2>
 
       <div class="steps">
-
-        <div class="step">
-          1️⃣ Оставь заявку в боте
-        </div>
-
-        <div class="step">
-          2️⃣ Пройди регистрацию в Яндекс Еде
-        </div>
-
-        <div class="step">
-          3️⃣ Установи приложение Яндекс Про
-        </div>
-
-        <div class="step">
-          4️⃣ Дождись подтверждения аккаунта
-        </div>
-
-        <div class="step">
-          5️⃣ Приди и получи форму / термосумку
-        </div>
-
-        <div class="step">
-          6️⃣ Выбери район и выходи на первые заказы 🚀
-        </div>
+        <div class="step">1️⃣ Оставь заявку в боте</div>
+        <div class="step">2️⃣ Пройди регистрацию в Яндекс Еде</div>
+        <div class="step">3️⃣ Установи приложение Яндекс Про</div>
+        <div class="step">4️⃣ Дождись подтверждения аккаунта</div>
+        <div class="step">5️⃣ Приди и получи форму / термосумку</div>
+        <div class="step">6️⃣ Выбери район и выходи на первые заказы 🚀</div>
 
         <div class="step-note">
           📞 Если возникнут вопросы —
           напиши менеджеру.
         </div>
-
       </div>
     </div>
 
@@ -473,113 +436,47 @@
   <section id="faq" class="section">
 
     <div class="card">
-
       <h2>❓ Вопросы и ответы</h2>
 
       <div class="faq-item">
-        <div class="faq-question">
-          С какого возраста можно стать курьером?
-        </div>
-
-        <div class="faq-answer">
-          Стать курьером-партнёром Яндекс Еды можно с 18 лет.
-        </div>
+        <div class="faq-question">С какого возраста можно стать курьером?</div>
+        <div class="faq-answer">Стать курьером-партнёром Яндекс Еды можно с 18 лет.</div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">
-          На чём можно доставлять заказы?
-        </div>
-
-        <div class="faq-answer">
-          Можно доставлять не только пешком. Если удобно управлять велосипедом,
-          самокатом или автомобилем — можно использовать их.
-        </div>
+        <div class="faq-question">На чём можно доставлять заказы?</div>
+        <div class="faq-answer">Можно доставлять пешком, на велосипеде, самокате или автомобиле.</div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">
-          Можно ли выполнять заказы по выходным?
-        </div>
-
-        <div class="faq-answer">
-          Да. Можно выбирать доступное время и районы. Если оформление идёт
-          через курьерскую службу, могут быть небольшие ограничения.
-        </div>
+        <div class="faq-question">Можно ли выполнять заказы по выходным?</div>
+        <div class="faq-answer">Да. Можно выбирать доступное время и районы.</div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">
-          Сколько заказов бывает за час?
-        </div>
-
-        <div class="faq-answer">
-          По данным сервиса, в обычный день в среднем может быть до двух
-          заказов от пользователей за час.
-        </div>
+        <div class="faq-question">Сколько заказов бывает за час?</div>
+        <div class="faq-answer">В обычный день может быть до двух заказов от пользователей за час.</div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">
-          Можно ли совмещать с основной работой?
-        </div>
-
-        <div class="faq-answer">
-          Да, обычно курьерам удаётся совмещать доставки с основной занятостью
-          и выходить в удобное время.
-        </div>
+        <div class="faq-question">Можно ли совмещать с основной работой?</div>
+        <div class="faq-answer">Да, доставки можно совмещать с основной занятостью и выходить в удобное время.</div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">
-          Как проходит старт?
-        </div>
-
-        <div class="faq-answer">
-          Нужно заполнить анкету, пройти короткое обучение, выбрать адрес и день,
-          чтобы получить термосумку, после этого можно начинать доставки.
-        </div>
+        <div class="faq-question">Как проходит старт?</div>
+        <div class="faq-answer">Нужно заполнить анкету, пройти короткое обучение, выбрать адрес и день получения термосумки.</div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">
-          Что делать, если с первого раза не получилось?
-        </div>
-
-        <div class="faq-answer">
-          По информации Яндекс Еды, снова подать заявку и пройти обучение можно
-          через месяц.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          Можно ли работать с iPhone?
-        </div>
-
-        <div class="faq-answer">
-          Да. Для подключения можно скачать приложение Яндекс Про из App Store
-          и следовать инструкции.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">
-          Есть ли бонус за приглашение друга?
-        </div>
-
-        <div class="faq-answer">
-          Да, можно получать бонус за приглашение новых курьеров. В калькуляторе
-          можно включить пункт «Пригласить друга», чтобы увидеть примерную сумму
-          с бонусом.
-        </div>
+        <div class="faq-question">Можно ли работать с iPhone?</div>
+        <div class="faq-answer">Да. Для подключения можно скачать приложение Яндекс Про из App Store.</div>
       </div>
 
     </div>
 
   </section>
-
-  <section id="profile" class="section">
+    <section id="profile" class="section">
 
     <div class="card">
       <h2>👤 Кабинет</h2>
@@ -591,15 +488,68 @@
     </div>
 
     <div class="card">
+      <h2>🚀 Оставить заявку</h2>
+
+      <div class="field">
+        <label>Имя</label>
+
+        <input
+          id="appName"
+          type="text"
+          placeholder="Например: Иван"
+        >
+      </div>
+
+      <div class="field">
+        <label>Телефон</label>
+
+        <input
+          id="appPhone"
+          type="tel"
+          placeholder="+7 999 123-45-67"
+        >
+      </div>
+
+      <div class="field">
+        <label>Район</label>
+
+        <input
+          id="appDistrict"
+          type="text"
+          placeholder="Например: Советский"
+        >
+      </div>
+
+      <div class="field">
+        <label>Тип доставки</label>
+
+        <input
+          id="appTransport"
+          type="text"
+          placeholder="Пеший / Вело / Авто"
+        >
+      </div>
+
+      <button
+        class="register-btn"
+        onclick="sendApplication()"
+      >
+        Отправить заявку
+      </button>
+
+      <p
+        id="appStatus"
+        style="text-align:center;font-weight:800;margin-top:14px;"
+      ></p>
+    </div>
+
+    <div class="card">
       <h2>📍 Районы с высоким спросом</h2>
 
       <p>
         🔥 Центральный — много кафе и удобен для пеших курьеров.<br><br>
-
         🔥 Советский — большие жилые кварталы и стабильный поток заказов.<br><br>
-
         🔥 Взлётка / Северный — активные вечерние заказы.<br><br>
-
         🔥 Железнодорожный — удобно начинать рядом с центром.
       </p>
     </div>
@@ -680,6 +630,52 @@
 
     document.getElementById("income-result").innerText =
       total.toLocaleString("ru-RU") + " ₽";
+  }
+
+  function sendApplication(){
+
+    const name =
+      document.getElementById("appName").value.trim();
+
+    const phone =
+      document.getElementById("appPhone").value.trim();
+
+    const district =
+      document.getElementById("appDistrict").value.trim();
+
+    const transport =
+      document.getElementById("appTransport").value.trim();
+
+    if(!name || !phone || !district || !transport){
+
+      document.getElementById("appStatus").innerText =
+        "Заполни все поля";
+
+      return;
+    }
+
+    const data = {
+      type: "webapp_application",
+      name: name,
+      phone: phone,
+      district: district,
+      transport: transport
+    };
+
+    if(window.Telegram && Telegram.WebApp){
+
+      Telegram.WebApp.sendData(
+        JSON.stringify(data)
+      );
+
+      document.getElementById("appStatus").innerText =
+        "✅ Заявка отправлена";
+
+    } else {
+
+      document.getElementById("appStatus").innerText =
+        "Открой приложение через Telegram";
+    }
   }
 
   function openSection(sectionId){
