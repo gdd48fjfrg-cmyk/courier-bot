@@ -451,15 +451,25 @@ ym(109567793, "init", {
 
       </div>
 
-      <label class="friend-check">
-        <input
-          type="checkbox"
-          id="friendBonus"
-          onchange="calculateIncome()"
-        >
-        👥 Пригласить друга (+31 200 ₽)
-      </label>
+      <div class="friend-toggle">
 
+  <label class="friend-check">
+
+    <input
+      type="checkbox"
+      id="friendBonus"
+      onchange="calculateIncome()"
+    >
+
+    <span></span>
+
+  </label>
+
+  <div class="friend-text">
+    🫂 Пригласить друга (+31 200 ₽)
+  </div>
+
+</div>
       <div class="result">
 
   <small>💰 Примерный доход</small>
