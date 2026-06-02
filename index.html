@@ -447,12 +447,21 @@ ym(109567793, "init", {
       </label>
 
       <div class="result">
-        <small>Примерный доход</small>
 
-        <div id="income-result" class="result-value">
-          70 400 ₽
-        </div>
-      </div>
+  <small>💰 Примерный доход</small>
+
+  <div id="income-result" class="result-value">
+    70 400 ₽
+  </div>
+
+  <small id="income-info" style="
+    display:block;
+    margin-top:12px;
+  ">
+    22 дня • 8 часов • Вело
+  </small>
+
+</div>
     </div>
 
     <div class="card">
@@ -809,7 +818,9 @@ ym(109567793, "init", {
     }
 
     document.getElementById("income-result").innerText =
-      total.toLocaleString("ru-RU") + " ₽";
+    total.toLocaleString("ru-RU") + " ₽";
+    document.getElementById("income-info").innerText =
+  `${days} дней • ${hours} часов • ${transportText}`;
   }
 
   function sendApplication(){
