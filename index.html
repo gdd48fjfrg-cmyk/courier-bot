@@ -763,6 +763,24 @@ ym(109567793, "init", {
 
   function setTransport(type){
 
+  if(type === "foot"){
+  currentRate = 400;
+  currentTransportText = "Пеший";
+  document.getElementById("transport-foot").classList.add("active");
+}
+
+if(type === "bike"){
+  currentRate = 450;
+  currentTransportText = "Вело";
+  document.getElementById("transport-bike").classList.add("active");
+}
+
+if(type === "car"){
+  currentRate = 510;
+  currentTransportText = "Авто";
+  document.getElementById("transport-car").classList.add("active");
+}
+
     document.getElementById("transport-foot").classList.remove("active");
     document.getElementById("transport-bike").classList.remove("active");
     document.getElementById("transport-car").classList.remove("active");
@@ -820,7 +838,8 @@ ym(109567793, "init", {
     document.getElementById("income-result").innerText =
     total.toLocaleString("ru-RU") + " ₽";
     document.getElementById("income-info").innerText =
-  `${days} дней • ${hours} часов • ${transportText}`;
+
+  `${days} дней • ${hours} часов • ${currentTransportText}`;
   }
 
   function sendApplication(){
