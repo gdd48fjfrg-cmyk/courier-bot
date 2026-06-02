@@ -415,12 +415,35 @@ ym(109567793, "init", {
         <label>Часов в день</label>
 
         <input
-          id="hours"
-          type="number"
-          value="8"
-          min="1"
-          max="16"
-          oninput="limitNumber(this,1,16); calculateIncome();"
+  id="hours"
+  type="text"
+  inputmode="numeric"
+  autocomplete="off"
+  maxlength="2"
+  value="8"
+
+  onkeypress="
+    return event.charCode >= 48
+    && event.charCode <= 57
+  "
+
+  onpaste="
+    return false
+  "
+
+  oninput="
+    this.value=this.value
+      .replace(/[^0-9]/g,'')
+      .slice(0,2);
+
+    if(Number(this.value)>16)
+      this.value='16';
+
+    if(this.value==='0')
+      this.value='1';
+
+    calculateIncome();
+  "
         >
       </div>
 
@@ -428,12 +451,36 @@ ym(109567793, "init", {
         <label>Дней в месяц</label>
 
         <input
-          id="days"
-          type="number"
-          value="22"
-          min="1"
-          max="31"
-          oninput="limitNumber(this,1,31); calculateIncome();"
+  id="days"
+  type="text"
+  inputmode="numeric"
+  autocomplete="off"
+  maxlength="2"
+  value="22"
+
+  onkeypress="
+    return event.charCode >= 48
+    && event.charCode <= 57
+  "
+
+  onpaste="
+    return false
+  "
+
+  oninput="
+    this.value=this.value
+      .replace(/[^0-9]/g,'')
+      .slice(0,2);
+
+    if(Number(this.value)>31)
+      this.value='31';
+
+    if(this.value==='0')
+      this.value='1';
+
+    calculateIncome();
+  "
+>
         >
       </div>
 
